@@ -1,37 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>aqa-button demo</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <title>test-ele demo</title>
 
-    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../aqa-button.html">
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
-      </style>
-    </custom-style>
-  </head>
-  <body>
-    <div class="vertical-section-container centered">
-      <h3>Basic aqa-button demo</h3>
-      <demo-snippet>
-        <template>
-          <aqa-button type="primary">primary</aqa-button>
-          <aqa-button type="success">success</aqa-button>
-          <aqa-button type="login">login</aqa-button>
-          <aqa-button type="default">default</aqa-button>
-          <aqa-button type="danger">danger</aqa-button>
-          <br><br>
-          <aqa-button type="login" disabled>disabled</aqa-button>
-          <aqa-button icon="icons:build" type="success">icon</aqa-button>
-        </template>
-      </demo-snippet>
-    </div>
-  </body>
+  <script type="module">
+    import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+    import '@polymer/iron-demo-helpers/demo-snippet';
+  </script>
+
+  <script type="module" src="../aqa-button.js"></script>
+
+  <custom-style>
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </custom-style>
+</head>
+
+<body>
+  <div class="vertical-section-container centered">
+    <h3>Basic test-ele demo</h3>
+    <demo-snippet>
+      <template>
+        <aqa-button type="primary">primary</aqa-button>
+        <aqa-button type="success">success</aqa-button>
+        <aqa-button type="login">login</aqa-button>
+        <aqa-button type="default">default</aqa-button>
+        <aqa-button type="danger">danger</aqa-button>
+        <br>
+        <br>
+        <aqa-button type="login" disabled="">disabled</aqa-button>
+        <aqa-button icon="icons:build" type="success">icon</aqa-button>
+      </template>
+    </demo-snippet>
+  </div>
+</body>
+
 </html>

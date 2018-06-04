@@ -1,11 +1,12 @@
-<link rel="import" href="../polymer/polymer-element.html">
-
-<link rel="import" href="../polymer/polymer-element.html">
-<link rel="import" href="../aqa-font/aqa-mitr-font.html">
-<link rel="import" href="../iron-icon/iron-icon.html">
-<link rel="import" href="../iron-icons/iron-icons.html">
-<dom-module id="aqa-button">
-    <template>
+import { PolymerElement } from '@polymer/polymer/polymer-element.js';
+// import '../../aqa-font/aqa-mitr-font.js';
+import '@aqa/aqa-font/aqa-mitr-font.js'
+import '@polymer/iron-icon/iron-icon.js';
+import '@polymer/iron-icons/iron-icons.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+class AqaButton extends PolymerElement {
+  static get template() {
+    return html`
         <style>
             button:focus {
                 outline: 0;
@@ -165,45 +166,39 @@
             }
         </style>
 
-        <button class$="btn btn-[[type]]" disabled$="[[disabled]]" title="ปุ่ม">
+        <button class\$="btn btn-[[type]]" disabled\$="[[disabled]]" title="ปุ่ม">
             <template is="dom-if" if="[[check_icon(icon)]]">
                 <iron-icon icon="[[icon]]"></iron-icon>
             </template>
             <slot></slot>
         </button>
+`;
+  }
 
+  static get is() {
+      return 'aqa-button';
+  }
 
-    </template>
+  static get properties() {
+      return {
+          type: {
+              type: String,
+              value: ''
+          },
+          icon: {
+              type: String,
+              value: ''
+          },
+          disabled: {
+              type: Boolean,
+              value: false
+          }
+      };
+  }
+  check_icon(val) {
+      if (val) return true;
+      else return false
+  }
+}
 
-    <script>
-        class AqaButton extends Polymer.Element {
-
-            static get is() {
-                return 'aqa-button';
-            }
-
-            static get properties() {
-                return {
-                    type: {
-                        type: String,
-                        value: ''
-                    },
-                    icon: {
-                        type: String,
-                        value: ''
-                    },
-                    disabled: {
-                        type: Boolean,
-                        value: false
-                    }
-                };
-            }
-            check_icon(val) {
-                if (val) return true;
-                else return false
-            }
-        }
-
-        window.customElements.define(AqaButton.is, AqaButton);
-    </script>
-</dom-module>
+window.customElements.define(AqaButton.is, AqaButton);
